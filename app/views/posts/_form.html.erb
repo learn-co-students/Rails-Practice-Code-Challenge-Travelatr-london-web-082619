@@ -1,0 +1,29 @@
+<% if @post.errors.any? %>
+  <p>The following errors occurred:</p>
+  <ul>
+    <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <br>
+<% end %>
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %> <br>
+  <%= f.text_field :title %> <br>
+  <br>
+
+  <%= f.label :content %> <br>
+  <%= f.text_area :content %> <br>
+  <br>
+
+  <%= f.label :blogger_id, "Blogger" %> <br>
+  <%= f.collection_select :blogger_id, @bloggers, :id, :name %> <br>
+  <br>
+
+  <%= f.label :destination_id, "Destination" %> <br>
+  <%= f.collection_select :destination_id, @destinations, :id, :name %> <br>
+  <br>
+
+  <%= f.submit %>
+<% end %>
