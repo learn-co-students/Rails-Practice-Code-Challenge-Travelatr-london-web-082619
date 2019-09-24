@@ -1,0 +1,17 @@
+<h1>Profile for <%=@blogger.name%> </h1>
+
+<h2>Total Likes</h2>
+<% if @blogger.active? %>
+<%= @blogger.total_likes %>
+<% else %>
+No Likes Yet!
+<% end %>
+
+<h2>Featured Post (also most popular)</h2>
+<% if @blogger.active? %>
+<%= link_to @blogger.most_liked_post.title, post_path(@blogger.most_liked_post) %>
+<% else %>
+No Posts Yet!
+<% end %>
+
+

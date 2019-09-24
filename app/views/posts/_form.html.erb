@@ -1,0 +1,28 @@
+<%= form_for @post do |f| %>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+by: <%= f.collection_select(:blogger_id, Blogger.all, :id, :name)%> <br><br>
+
+<%= f.label :title %>
+<%= f.text_field :title %> <br><br>
+
+<%= f.label :content %>
+<%= f.text_area :content %> <br><br>
+
+<%= f.collection_select(:destination_id, Destination.all, :id, :name)%> <br><br>
+
+<%= hidden_field_tag "post[likes]", 0  %>
+
+<%= f.submit %> <br><br>
+
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Profile for <%= @destination.name %></h1>
+
+<h2>Most Recent Posts (max 5)</h2>
+
+<% i = 1 %>
+<% @destination.most_recent_posts.each do |post| %>
+<%= "#{i}. #{post.title}" %> <br><br>
+<% i += 1 %>
+<% end %>
+
+<h2>Featured Post / Most Liked</h2>
+
+<%= link_to @destination.most_likes.title, post_path(@destination.most_likes)%>
+
+<h2>Average Blogger Age</h2>
+
+<%= @destination.average_blogger_age%>
