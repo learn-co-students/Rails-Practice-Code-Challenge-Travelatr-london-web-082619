@@ -1,0 +1,14 @@
+<h1> <%= @post.title %></h1>
+
+<h3><%= @post.likes%> likes </h3>
+
+<%= form_tag(update_post_path, method: "patch") do %>
+<%= hidden_field_tag "post[likes]", @post.likes += 1  %>
+  <%= submit_tag("Like") %>
+<% end %>
+
+<p><%= @post.content %></p>
+
+<h3>Blogger: <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></h3>
+
+<h3><%= link_to "More about #{@post.destination.name}", destination_path(@post.destination) %></h3>
