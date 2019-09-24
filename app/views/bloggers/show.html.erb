@@ -1,0 +1,20 @@
+<h1><%= @blogger.name %></h1>
+<table style="width:50%">
+<tr>
+<th>Bio</th>
+<th>Featured Post</th>
+<th>Total Likes</th>
+</tr>
+<tr>
+<td><%= @blogger.bio %></td>
+<td><% if !@posts.empty? %>
+<%= link_to @featured.title, post_path(@featured)  %> | <%= @featured.likes %> likes
+<% else %>
+This author has no posts yet
+<% end %></td>
+<td><%= @total_likes %></td>
+</tr>
+</table>
+
+<%= link_to 'Edit blogger', edit_blogger_path(@blogger) %><br>
+<%= link_to 'Back to blogger list', bloggers_path %>

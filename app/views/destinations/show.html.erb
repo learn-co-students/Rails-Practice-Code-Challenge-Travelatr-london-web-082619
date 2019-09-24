@@ -1,0 +1,21 @@
+<h1><%= @destination.name %></h1>
+<table style="width:50%">
+<tr>
+<th>Featured Post</th>
+<th>Average Age Of Bloggers</th>
+</tr>
+<tr>
+<td>
+<% if !@posts.empty? %>
+<%= link_to @featured.title, post_path(@featured)  %> | <%= @featured.likes %> likes
+<% else %>
+This destination has no posts yet
+<% end %></td>
+<td>
+<% if !@posts.empty? %>
+<%= @average_blogger_age %>
+<% else %>
+This destination has no bloggers yet
+<% end %></td>
+</tr>
+</table>

@@ -9,6 +9,14 @@
   </head>
 
   <body>
+  <nav><ul>
+  <li><%= link_to 'Bloggers', bloggers_path %></li>
+  <li><%= link_to 'New Blogger', new_blogger_path %></li>
+  <li><%= link_to 'Posts', posts_path %></li>
+  <li><%= link_to 'New Post', new_post_path %></li>
+  <li><%= link_to 'Destinations', destinations_path %> </li>
+  </ul>
+  </nav>
     <%= yield %>
   </body>
 </html>
