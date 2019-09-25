@@ -1,0 +1,10 @@
+<%= @blogger.name %><br>
+<%= @blogger.age %><br>
+<%= @blogger.bio %><br>
+
+<%= link_to 'See posts by this blogger', posts_path(@blogger.posts.id) %>
+
+<%= link_to 'Edit', edit_blogger_path(@blogger)%>
+
+<%=link_to 'back', bloggers_path%> 
+
