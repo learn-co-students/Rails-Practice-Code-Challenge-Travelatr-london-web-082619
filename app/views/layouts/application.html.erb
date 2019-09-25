@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Bloggers", :bloggers %> | <%= link_to "Posts", :posts %> | <%= link_to "Destinations", :destinations %>
+      | <%= link_to "New Blogger", :new_blogger%> | <%= link_to "New Post", :new_post %>
+    </nav>
     <%= yield %>
   </body>
 </html>

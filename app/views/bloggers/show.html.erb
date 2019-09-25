@@ -1,0 +1,32 @@
+<h1 align="center"><%= @blogger.name %></h1>
+
+<h4 align="right">Total likes: <%= @posts.sum{|post| post.likes} %></h4>
+
+<h2>Bio:</h2>
+<p style="max-width:40%"><%= @blogger.bio %></p>
+
+<% if !@posts.empty? %>
+    <h2 align="center">Featured Post: <br><%= link_to @featured_post.title, post_path(@featured_post) %>&nbsp | <%= @featured_post.likes %> likes</h2>
+<% end %>
+
+<br>
+
+<h2>Most blogged destinations: </h2>
+<p>
+    <% @ordered_destinations.first(2).each do |dest| %>
+        <%= link_to dest.name, dest %> &nbsp
+    <% end %>
+</p>
+
+<br>
+
+<h2 align="center">Posts:</h2>
+
+    <% @posts.each do |post| %>
+        <h3 align="center">- <%= link_to post.title, post %> &nbsp | <%= post.likes %> likes</h3></li> <br>
+    <% end %>
+
+
+<div align="right"><%= link_to "Edit", edit_blogger_path(@blogger) %></div>
+<div align="right"><%= link_to "Delete", @blogger, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    
