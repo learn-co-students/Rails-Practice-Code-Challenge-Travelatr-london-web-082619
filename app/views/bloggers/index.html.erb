@@ -1,0 +1,9 @@
+<h4>Our Bloggers:</h4>
+<%= button_to 'New Blogger', new_blogger_path, method: :get%> <br>
+<% @bloggers.each do |b| %>
+<p><%= link_to b.name, blogger_path(b) %> </p>
+<p>Age: <%= b.age %> </p>
+<p>Bio: <%= b.bio %> </p>
+<%= button_to 'EDIT', edit_blogger_path(b), method: :get%>
+<%= button_to 'DELETE', blogger_path(b), method: :delete%> <br>
+<%end%>

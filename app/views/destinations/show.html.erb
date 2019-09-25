@@ -1,0 +1,7 @@
+<h4>Destination Individual Overview:</h4>
+
+<p>Most recent posts: <% @destination.most_recent.each do |p| %> </p>
+<%= p.title %>
+<%end%>
+
+<p><%= link_to @destination.most_likes.name, post_path(@destination.most_likes) %></p>
