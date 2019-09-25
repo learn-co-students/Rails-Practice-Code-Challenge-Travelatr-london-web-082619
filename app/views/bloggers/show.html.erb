@@ -1,0 +1,7 @@
+<h3><%= @blogger.name %> </h3>
+
+<%= @blogger.bio %><br><br>
+<p> Age: <%= @blogger.age %> <br><br></p>
+
+<p>Total Likes: <%= @blogger.posts.sum {|posts| posts.likes} %> </p>
+<%= link_to "Featured Post", post_path(@blogger.posts.max_by {|post| post.likes}.id) %>
