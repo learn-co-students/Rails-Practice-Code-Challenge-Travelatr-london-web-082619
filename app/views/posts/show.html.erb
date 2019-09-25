@@ -1,0 +1,17 @@
+<h1 align="center"><%= @post.title %></h1>
+by <%= link_to @post.blogger.name, blogger_path(@post.blogger) %>
+
+<h4 
+align="right">Likes: <%= @post.likes%>
+
+
+<%= form_tag "/posts/#{@post.id}/like" do%>
+    <%= submit_tag "👍" %>
+<% end %>
+
+</h4>
+
+<h3>Location: <%= @post.destination.name %></h3>
+<p style="max-width:70%"><%= @post.content %></p>
+
+
