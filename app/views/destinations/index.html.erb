@@ -1,0 +1,7 @@
+
+<% @destinations.each do |destination| %>
+    <h4><%= destination.name %><br></h4>
+    <%= destination.country %><br>
+    <br>
+    <%= link_to "Delete", destination, method: :delete, data: { confirm: "Are you sure?"} %>
+<% end %>
