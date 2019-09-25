@@ -1,0 +1,15 @@
+<h3>Post form:</h3>
+
+<%= form_for(@post) do |f|%>
+<%= f.label :title %>
+<%= f.text_field :title %> <br> <br>
+<%= f.label :content %>
+<%= f.text_area :content %> <br>
+
+<p>Blogger: <%= f.collection_select :blogger_id, Blogger.all, :id, :name%></p>
+<p>Destination: <%= f.collection_select :destination_id, Destination.all, :id, :name%></p>
+<%= %>
+
+<%= f.submit %>
+
+<%end%>
