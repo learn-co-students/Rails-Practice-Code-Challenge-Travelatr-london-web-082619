@@ -1,0 +1,23 @@
+<%= form_for(@blogger) do |f| %>
+    <% if @blogger.errors.any? %>
+    <div id="error_explanation">
+        <ul>
+            <% @blogger.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>        
+    </div>
+    <% end %>
+
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %> <br>
+
+    <%= f.label :bio %> <br>
+    <%= f.text_area :bio %> <br>
+
+    <%= f.label :age %> <br>
+    <%= f.text_area :age %> <br>
+
+    <%= f.submit %>
+
+<% end %>
