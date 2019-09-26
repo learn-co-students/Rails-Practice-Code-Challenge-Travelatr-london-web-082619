@@ -1,0 +1,11 @@
+<h1><%= @blogger.name %></h1>
+
+<p><i>Bio: </i> <%= @blogger.bio %> </p>
+<p><i>Age: </i><%= @blogger.age %></p>
+<% if @post %>
+    <%= link_to('featured_post', post_path(@post)) %>
+<% else %>
+    <p>No posts</p>
+<% end %>
+<br>
+<%= link_to('Back', bloggers_path) %>
